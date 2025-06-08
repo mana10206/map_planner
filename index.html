@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manually Placed Map Hotspots</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Guild Battle Map Planner</h1>
+
+    <div id="controls">
+      <div class="control-group">
+        <label for="day-select">Planning for Day:</label>
+        <select id="day-select">
+          <option value="1">Day 1</option>
+          <option value="2">Day 2</option>
+          <option value="3">Day 3</option>
+          <option value="4">Day 4</option>
+          <option value="5">Day 5</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <span
+          >Squares selected for this day:
+          <span id="selected-count">0</span>/4</span
+        >
+      </div>
+      <div class="control-group">
+        <button id="clear-day-button">Clear Current Day's Plan</button>
+        <button id="clear-all-button">Clear Entire Plan</button>
+      </div>
+    </div>
+    <hr />
+
+    <div id="planner-summary">
+      <h2>Total Acquired Boosts (All Days):</h2>
+      <div id="boost-summary-content">
+        <p>Plan your days to see total boosts here.</p>
+      </div>
+    </div>
+    <hr style="margin-bottom: 20px" />
+
+    <p>
+      Click on a square to highlight it. Current highlight color:
+      <span id="currentColorDisplay"></span> (This will update based on selected
+      day)
+    </p>
+
+    <div id="map-container">
+      <img src="image_3cfd67.png" alt="Game Map" id="game-map-image" />
+
+      <svg id="arrow-svg-layer"></svg>
+
+      <div class="clickable-square" id="wind_stone" data-name="Square 1"></div>
+      <div class="clickable-square" id="desert" data-name="Square 2"></div>
+      <div class="clickable-square" id="coast" data-name="Square 3"></div>
+      <div class="clickable-square" id="river" data-name="Square 4"></div>
+      <div class="clickable-square" id="tundra" data-name="Square 5"></div>
+      <div class="clickable-square" id="salt_lake" data-name="Square 6"></div>
+      <div class="clickable-square" id="reef" data-name="Square 7"></div>
+      <div class="clickable-square" id="temple" data-name="Square 8"></div>
+      <div class="clickable-square" id="culture" data-name="Square 9"></div>
+      <div class="clickable-square" id="tradition" data-name="Square 10"></div>
+      <div class="clickable-square" id="sites" data-name="Square 11"></div>
+      <div class="clickable-square" id="mystery" data-name="Square 12"></div>
+      <div class="clickable-square" id="faith" data-name="Square 13"></div>
+      <div
+        class="clickable-square"
+        id="frost_ridge_first"
+        data-name="Square 14"
+      ></div>
+      <div class="clickable-square" id="old_well" data-name="Square 15"></div>
+      <div class="clickable-square" id="esteem" data-name="Square 16"></div>
+      <div class="clickable-square" id="trench" data-name="Square 17"></div>
+      <div class="clickable-square" id="honor" data-name="Square 18"></div>
+      <div class="clickable-square" id="defense" data-name="Square 19"></div>
+      <div class="clickable-square" id="warrior" data-name="Square 20"></div>
+      <div class="clickable-square" id="karst" data-name="Square 21"></div>
+      <div class="clickable-square" id="snow_peak" data-name="Square 22"></div>
+      <div
+        class="clickable-square"
+        id="altar_first"
+        data-name="Square 23"
+      ></div>
+      <div class="clickable-square" id="city_wall" data-name="Square 24"></div>
+      <div class="clickable-square" id="castle" data-name="Square 25"></div>
+      <div
+        class="clickable-square"
+        id="sanctuary_first"
+        data-name="Square 26"
+      ></div>
+      <div
+        class="clickable-square"
+        id="battlefield"
+        data-name="Square 27"
+      ></div>
+      <div class="clickable-square" id="shelter" data-name="Square 28"></div>
+      <div class="clickable-square" id="resource" data-name="Square 29"></div>
+      <div class="clickable-square" id="fortress" data-name="Square 30"></div>
+      <div class="clickable-square" id="royalty" data-name="Square 31"></div>
+      <div class="clickable-square" id="garden" data-name="Square 32"></div>
+      <div class="clickable-square" id="legend" data-name="Square 33"></div>
+      <div class="clickable-square" id="swamp" data-name="Square 34"></div>
+      <div class="clickable-square" id="ice_fields" data-name="Square 35"></div>
+      <div class="clickable-square" id="stele" data-name="Square 36"></div>
+      <div
+        class="clickable-square"
+        id="stone_pillar"
+        data-name="Square 37"
+      ></div>
+      <div class="clickable-square" id="guardian" data-name="Square 38"></div>
+      <div
+        class="clickable-square"
+        id="king_square"
+        data-name="King Square"
+      ></div>
+      <div class="clickable-square" id="guard" data-name="Square 40"></div>
+      <div class="clickable-square" id="war" data-name="Square 41"></div>
+      <div class="clickable-square" id="symbol" data-name="Square 42"></div>
+      <div class="clickable-square" id="canyon" data-name="Square 43"></div>
+      <div class="clickable-square" id="stone_wall" data-name="Square 44"></div>
+      <div class="clickable-square" id="remants" data-name="Square 45"></div>
+      <div class="clickable-square" id="glacier" data-name="Square 46"></div>
+      <div class="clickable-square" id="rift" data-name="Square 47"></div>
+      <div class="clickable-square" id="plaza" data-name="Square 48"></div>
+      <div
+        class="clickable-square"
+        id="sanctuary_second"
+        data-name="Square 49"
+      ></div>
+      <div class="clickable-square" id="aqueduct" data-name="Square 50"></div>
+      <div class="clickable-square" id="warflames" data-name="Square 51"></div>
+      <div class="clickable-square" id="barracks" data-name="Square 52"></div>
+      <div class="clickable-square" id="treasure" data-name="Square 53"></div>
+      <div class="clickable-square" id="dominion" data-name="Square 54"></div>
+      <div class="clickable-square" id="conquest" data-name="Square 55"></div>
+      <div class="clickable-square" id="tomb" data-name="Square 56"></div>
+      <div class="clickable-square" id="sacrifice" data-name="Square 57"></div>
+      <div class="clickable-square" id="well" data-name="Square 58"></div>
+      <div class="clickable-square" id="cave" data-name="Square 59"></div>
+      <div class="clickable-square" id="hot_stone" data-name="Square 60"></div>
+      <div class="clickable-square" id="fountain" data-name="Square 61"></div>
+      <div class="clickable-square" id="cellar" data-name="Square 62"></div>
+      <div class="clickable-square" id="bell_tower" data-name="Square 63"></div>
+      <div class="clickable-square" id="shrine" data-name="Square 64"></div>
+      <div class="clickable-square" id="church" data-name="Square 65"></div>
+      <div class="clickable-square" id="monastery" data-name="Square 66"></div>
+      <div class="clickable-square" id="volcano" data-name="Square 67"></div>
+      <div class="clickable-square" id="lost_sand" data-name="Square 68"></div>
+      <div class="clickable-square" id="statue" data-name="Square 69"></div>
+      <div
+        class="clickable-square"
+        id="frost_ridge_second"
+        data-name="Square 70"
+      ></div>
+      <div class="clickable-square" id="haze_rain" data-name="Square 71"></div>
+      <div class="clickable-square" id="stream" data-name="Square 72"></div>
+      <div class="clickable-square" id="vine" data-name="Square 73"></div>
+      <div class="clickable-square" id="rainforest" data-name="Square 74"></div>
+    </div>
+
+    <div id="tooltip"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
