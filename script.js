@@ -716,8 +716,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tooltip.innerHTML = tooltipContent;
     tooltip.style.display = "block";
-    tooltip.style.left = event.pageX + 15 + "px";
-    tooltip.style.top = event.pageY + 10 + "px";
+    tooltip.style.left = event.clientX + 15 + "px";
+    tooltip.style.top = event.clientY + 10 + "px";
   }
 
   function hideTooltip() {
