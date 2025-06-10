@@ -1,512 +1,107 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0;
-  background-color: #f0f0f0;
+  background-color: #f0f2f5;
   padding: 20px;
+  color: #1c1e21;
 }
-
+h1 {
+  color: #333;
+}
+hr {
+  width: 90%;
+  max-width: 800px;
+  margin: 25px auto;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
 #map-container {
   position: relative;
   width: 1200px;
   height: 900px;
-  margin: 0 auto;
-  border: 1px solid #555;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 #game-map-image {
   display: block;
   width: 100%;
   height: 100%;
 }
-
 .clickable-square {
   position: absolute;
   width: 35px;
   height: 35px;
-  background-color: rgba(220, 220, 220, 0.3);
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(220, 220, 220, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
   cursor: pointer;
-  transition: background-color 0.2s ease, border 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.clickable-square:hover {
-  background-color: rgba(220, 220, 220, 0.6);
-  border-color: rgba(0, 0, 0, 0.8);
-}
-
-/* First Col*/
-#wind_stone {
-  top: 50px;
-  left: 75px;
-}
-
-#desert {
-  top: 145px;
-  left: 75px;
-}
-
-#coast {
-  top: 250px;
-  left: 75px;
-}
-
-#river {
-  top: 350px;
-  left: 75px;
-}
-
-#tundra {
-  top: 450px;
-  left: 75px;
-}
-
-#salt_lake {
-  top: 550px;
-  left: 75px;
-}
-
-#reef {
-  top: 630px;
-  left: 75px;
-}
-
-/* Second Col*/
-
-#temple {
-  top: 90px;
-  left: 200px;
-}
-
-#culture {
-  top: 175px;
-  left: 150px;
-}
-
-#tradition {
-  top: 285px;
-  left: 175px;
-}
-
-#sites {
-  top: 395px;
-  left: 135px;
-}
-
-#mystery {
-  top: 495px;
-  left: 135px;
-}
-
-#faith {
-  top: 595px;
-  left: 175px;
-}
-
-/* Third Col*/
-#frost_ridge_first {
-  top: 35px;
-  left: 275px;
-}
-
-#old_well {
-  top: 135px;
-  left: 275px;
-}
-
-#esteem {
-  top: 225px;
-  left: 250px;
-}
-
-#trench {
-  top: 325px;
-  left: 275px;
-}
-
-#honor {
-  top: 390px;
-  left: 220px;
-}
-
-#defense {
-  top: 450px;
-  left: 295px;
-}
-
-#warrior {
-  top: 525px;
-  left: 285px;
-}
-
-#karst {
-  top: 625px;
-  left: 265px;
-}
-
-/* Fourth Col*/
-#snow_peak {
-  top: 30px;
-  left: 435px;
-}
-
-#altar_first {
-  top: 65px;
-  left: 435px;
-}
-
-#city_wall {
-  top: 105px;
-  left: 435px;
-}
-
-#castle {
-  top: 205px;
-  left: 345px;
-}
-
-#sanctuary_first {
-  top: 155px;
-  left: 475px;
-}
-
-#battlefield {
-  top: 205px;
-  left: 475px;
-}
-
-#shelter {
-  top: 325px;
-  left: 400px;
-}
-
-#resource {
-  top: 425px;
-  left: 450px;
-}
-
-#fortress {
-  top: 495px;
-  left: 450px;
-}
-
-#royalty {
-  top: 565px;
-  left: 350px;
-}
-
-#garden {
-  top: 565px;
-  left: 490px;
-}
-
-#legend {
-  top: 615px;
-  left: 450px;
-}
-
-#swamp {
-  top: 655px;
-  left: 400px;
-}
-
-/* Fifth Col*/
-#ice_fields {
-  top: 40px;
-  left: 600px;
-}
-
-#stele {
-  top: 100px;
-  left: 625px;
-}
-
-#stone_pillar {
-  top: 160px;
-  left: 685px;
-}
-
-#guardian {
-  top: 250px;
-  left: 625px;
-}
-
-#king_square {
-  /* King Square*/
-  top: 340px;
-  left: 605px;
-}
-
-#guard {
-  top: 470px;
-  left: 675px;
-}
-
-#war {
-  top: 530px;
-  left: 695px;
-}
-
-#symbol {
-  top: 575px;
-  left: 595px;
-}
-
-#canyon {
-  top: 645px;
-  left: 610px;
-}
-
-#stone_wall {
-  top: 575px;
-  left: 790px;
-}
-
-#remants {
-  top: 610px;
-  left: 760px;
-}
-
-/* Sixth Col*/
-#glacier {
-  top: 650px;
-  left: 795px;
-}
-
-#rift {
-  top: 25px;
-  left: 790px;
-}
-
-#plaza {
-  top: 65px;
-  left: 790px;
-}
-
-#sanctuary_second {
-  top: 105px;
-  left: 840px;
-}
-
-/* #aqueduct {
-  top: 105px;
-  left: 840px;
-} */
-
-#aqueduct {
-  top: 155px;
-  left: 920px;
-}
-
-#warflames {
-  top: 195px;
-  left: 775px;
-}
-
-#barracks {
-  top: 225px;
-  left: 895px;
-}
-
-#treasure {
-  top: 335px;
-  left: 775px;
-}
-
-#dominion {
-  top: 445px;
-  left: 825px;
-}
-
-#conquest {
-  top: 315px;
-  left: 900px;
-}
-
-#tomb {
-  top: 415px;
-  left: 920px;
-}
-
-#sacrifice {
-  top: 490px;
-  left: 940px;
-}
-
-#well {
-  top: 555px;
-  left: 930px;
-}
-
-#cave {
-  top: 635px;
-  left: 950px;
-}
-
-/* Seventh Col*/
-
-#hot_stone {
-  top: 40px;
-  left: 950px;
-}
-
-#fountain {
-  top: 100px;
-  left: 990px;
-}
-
-#cellar {
-  top: 250px;
-  left: 990px;
-}
-
-#bell_tower {
-  top: 295px;
-  left: 1040px;
-}
-
-#shrine {
-  top: 395px;
-  left: 1040px;
-}
-
-#church {
-  top: 495px;
-  left: 1040px;
-}
-
-#monastery {
-  top: 585px;
-  left: 1020px;
-}
-
-/* Eighth Col*/
-#volcano {
-  top: 45px;
-  left: 1125px;
-}
-
-#lost_sand {
-  top: 115px;
-  left: 1125px;
-}
-
-#statue {
-  top: 185px;
-  left: 1090px;
-}
-
-#frost_ridge_second {
-  top: 225px;
-  left: 1150px;
-}
-
-#haze_rain {
-  top: 330px;
-  left: 1125px;
-}
-
-#stream {
-  top: 430px;
-  left: 1125px;
-}
-
-#vine {
-  top: 540px;
-  left: 1125px;
-}
-
-#rainforest {
-  top: 640px;
-  left: 1125px;
-}
-
-.highlighted {
-  border: 2px solid gold !important;
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
-}
-
-#tooltip {
-  position: fixed;
-  background-color: black;
-  color: white;
-  padding: 5px 10px;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    transform 0.1s ease;
   border-radius: 4px;
-  font-size: 0.9em;
-  display: none;
-  pointer-events: none;
-  z-index: 1000;
 }
-
+.clickable-square:hover {
+  background-color: rgba(255, 235, 59, 0.7);
+  border-color: #000;
+  transform: scale(1.1);
+}
 #controls {
   margin-bottom: 20px;
   padding: 15px;
-  background-color: #e9e9e9;
+  background-color: #fff;
   border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   align-items: center;
+  width: 90%;
+  max-width: 800px;
+  border: 1px solid #ddd;
 }
-
 .control-group {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 #controls label {
-  font-weight: bold;
+  font-weight: 600;
 }
-
 #controls select,
 #controls button {
   padding: 8px 12px;
-  border-radius: 4px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  font-size: 0.9em;
+  font-size: 0.95em;
+  background-color: #f5f6f7;
 }
-
 #controls button {
-  background-color: #d4d4d4;
   cursor: pointer;
+  font-weight: 600;
 }
-
 #controls button:hover {
-  background-color: #c0c0c0;
+  background-color: #e9ebee;
 }
-
 #selected-count {
   font-weight: bold;
 }
-
-hr {
-  width: 80%;
-  margin: 20px auto;
-  border: 0;
-  border-top: 1px solid #ccc;
+#tooltip {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  display: none;
+  pointer-events: none;
+  z-index: 1000;
+  line-height: 1.5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
-
-.day1-selected {
-  background-color: rgba(255, 100, 100, 0.7) !important;
-  border-color: darkred !important;
-}
-.day2-selected {
-  background-color: rgba(100, 255, 100, 0.7) !important;
-  border-color: darkgreen !important;
-}
-.day3-selected {
-  background-color: rgba(100, 100, 255, 0.7) !important;
-  border-color: darkblue !important;
-}
-
 #arrow-svg-layer {
   position: absolute;
   top: 0;
@@ -516,50 +111,338 @@ hr {
   pointer-events: none;
   z-index: 5;
 }
-
 #planner-summary {
   width: 90%;
   max-width: 800px;
-  margin: 25px auto;
   padding: 20px;
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 #planner-summary h2 {
   margin-top: 0;
   text-align: center;
   color: #333;
   border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   margin-bottom: 15px;
 }
-
 #boost-summary-content ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-
 #boost-summary-content li {
-  padding: 8px 5px;
-  border-bottom: 1px dotted #e0e0e0;
+  padding: 10px 5px;
+  border-bottom: 1px solid #f0f0f0;
   display: flex;
   justify-content: space-between;
   font-size: 0.95em;
 }
-
 #boost-summary-content li:last-child {
   border-bottom: none;
 }
-
 #boost-summary-content li strong {
-  color: #555;
+  color: #333;
 }
-
 #boost-summary-content p {
   text-align: center;
   color: #777;
+}
+#wind_stone {
+  top: 50px;
+  left: 75px;
+}
+#desert {
+  top: 145px;
+  left: 75px;
+}
+#coast {
+  top: 250px;
+  left: 75px;
+}
+#river {
+  top: 350px;
+  left: 75px;
+}
+#tundra {
+  top: 450px;
+  left: 75px;
+}
+#salt_lake {
+  top: 550px;
+  left: 75px;
+}
+#reef {
+  top: 630px;
+  left: 75px;
+}
+#temple {
+  top: 90px;
+  left: 200px;
+}
+#culture {
+  top: 175px;
+  left: 150px;
+}
+#tradition {
+  top: 285px;
+  left: 175px;
+}
+#sites {
+  top: 395px;
+  left: 135px;
+}
+#mystery {
+  top: 495px;
+  left: 135px;
+}
+#faith {
+  top: 595px;
+  left: 175px;
+}
+#frost_ridge_first {
+  top: 35px;
+  left: 275px;
+}
+#old_well {
+  top: 135px;
+  left: 275px;
+}
+#esteem {
+  top: 225px;
+  left: 250px;
+}
+#trench {
+  top: 325px;
+  left: 275px;
+}
+#honor {
+  top: 390px;
+  left: 220px;
+}
+#defense {
+  top: 450px;
+  left: 295px;
+}
+#warrior {
+  top: 525px;
+  left: 285px;
+}
+#karst {
+  top: 625px;
+  left: 265px;
+}
+#snow_peak {
+  top: 30px;
+  left: 435px;
+}
+#altar_first {
+  top: 65px;
+  left: 435px;
+}
+#city_wall {
+  top: 105px;
+  left: 435px;
+}
+#castle {
+  top: 205px;
+  left: 345px;
+}
+#sanctuary_first {
+  top: 155px;
+  left: 475px;
+}
+#battlefield {
+  top: 205px;
+  left: 475px;
+}
+#shelter {
+  top: 325px;
+  left: 400px;
+}
+#resource {
+  top: 425px;
+  left: 450px;
+}
+#fortress {
+  top: 495px;
+  left: 450px;
+}
+#royalty {
+  top: 565px;
+  left: 350px;
+}
+#garden {
+  top: 565px;
+  left: 490px;
+}
+#legend {
+  top: 615px;
+  left: 450px;
+}
+#swamp {
+  top: 655px;
+  left: 400px;
+}
+#ice_fields {
+  top: 40px;
+  left: 600px;
+}
+#stele {
+  top: 100px;
+  left: 625px;
+}
+#stone_pillar {
+  top: 160px;
+  left: 685px;
+}
+#guardian {
+  top: 250px;
+  left: 625px;
+}
+#king_square {
+  top: 340px;
+  left: 605px;
+  cursor: default;
+}
+#guard {
+  top: 470px;
+  left: 675px;
+}
+#war {
+  top: 530px;
+  left: 695px;
+}
+#symbol {
+  top: 575px;
+  left: 595px;
+}
+#canyon {
+  top: 645px;
+  left: 610px;
+}
+#stone_wall {
+  top: 575px;
+  left: 790px;
+}
+#remants {
+  top: 610px;
+  left: 760px;
+}
+#glacier {
+  top: 650px;
+  left: 795px;
+}
+#rift {
+  top: 25px;
+  left: 790px;
+}
+#plaza {
+  top: 65px;
+  left: 790px;
+}
+#sanctuary_second {
+  top: 105px;
+  left: 840px;
+}
+#aqueduct {
+  top: 155px;
+  left: 920px;
+}
+#warflames {
+  top: 195px;
+  left: 775px;
+}
+#barracks {
+  top: 225px;
+  left: 895px;
+}
+#treasure {
+  top: 335px;
+  left: 775px;
+}
+#dominion {
+  top: 445px;
+  left: 825px;
+}
+#conquest {
+  top: 315px;
+  left: 900px;
+}
+#tomb {
+  top: 415px;
+  left: 920px;
+}
+#sacrifice {
+  top: 490px;
+  left: 940px;
+}
+#well {
+  top: 555px;
+  left: 930px;
+}
+#cave {
+  top: 635px;
+  left: 950px;
+}
+#hot_stone {
+  top: 40px;
+  left: 950px;
+}
+#fountain {
+  top: 100px;
+  left: 990px;
+}
+#cellar {
+  top: 250px;
+  left: 990px;
+}
+#bell_tower {
+  top: 295px;
+  left: 1040px;
+}
+#shrine {
+  top: 395px;
+  left: 1040px;
+}
+#church {
+  top: 495px;
+  left: 1040px;
+}
+#monastery {
+  top: 585px;
+  left: 1020px;
+}
+#volcano {
+  top: 45px;
+  left: 1125px;
+}
+#lost_sand {
+  top: 115px;
+  left: 1125px;
+}
+#statue {
+  top: 185px;
+  left: 1090px;
+}
+#frost_ridge_second {
+  top: 225px;
+  left: 1150px;
+}
+#haze_rain {
+  top: 330px;
+  left: 1125px;
+}
+#stream {
+  top: 430px;
+  left: 1125px;
+}
+#vine {
+  top: 540px;
+  left: 1125px;
+}
+#rainforest {
+  top: 640px;
+  left: 1125px;
 }
